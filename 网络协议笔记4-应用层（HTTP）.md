@@ -105,10 +105,11 @@
 	- Accept-Encoding	能够接受的编码方式列表。Accept-Encoding: gzip, deflate	常设
 	- Accept-Language	能够接受的回应内容的自然语言列表。Accept-Language: en-US	常设
 	- Range	仅请求某个实体的一部分。字节偏移以0开始。Range: bytes=500-999	常设。 **常用来断点续传，从500开始接受数据**
-	- Origin ： 暂未讲
+	- Origin ： 发起一个针对 跨来源资源共享 的请求（要求服务器在回应中加入一个‘访问控制-允许来源’（'Access-Control-Allow-Origin'）字段）。Origin: http://www.example-social-network.com。常设: 标准
 	- Cookie：与响应头的set-cookie对应，之前由服务器通过 Set- Cookie （下文详述）发送的一个 超文本传输协议Cookie。 Cookie: $Version=1; Skin=new; 常设: 标准
 	- Connection：该浏览器想要优先使用的连接类型 。 Connection: keep-alive 。 常设
-	- Cache-Control ： 暂未讲
+	- Cache-Control ：用来指定在这次的请求/响应链中的所有缓存机制 都必须 遵守的指令。Cache-Control: no-cache。常设
+	
 - 响应头字段
 	- Date：此条消息被发送时的日期和时间 Date: Tue, 15 Nov 1994 08:12:31 GMT	常设
 	- Last-Modified：所请求的对象的最后修改日期 。 Last-Modified: Tue, 15 Nov 1994 12:45:26 GMT	常设
@@ -120,11 +121,11 @@
 	- Content-Disposition ：一个可以让客户端下载文件并建议文件名的头部。文件名需要用双引号包裹。 Content-Disposition: attachment; filename="fname.ext"	常设。
 	- Accept-Ranges：这个服务器支持哪些种类的部分内容范围。Accept-Ranges: bytes	常设
 	- Content-Range：这条部分消息是属于某条完整消息的哪个部分。Content-Range: bytes 21010-47021/47022。常设
-	- Access-Control-Allow-Origin：暂未讲
+	- Access-Control-Allow-Origin：指定哪些网站可参与到跨来源资源共享过程中。Access-Control-Allow-Origin: *	 *临时*
 	- Location：用来 进行重定向，或者在创建了某个新资源时使用。Location: http://www.w3.org/pub/WWW/People.html。 常设
 	- Set-Cookie：返回一个cookie让客户端存储。Set-Cookie: UserID=JohnDoe; Max-Age=3600; Version=1 常设: 标准
 	- Connection：针对该连接所预期的选项 。 Connection: close。常设
-	- Cache-Control： 暂未讲
+	- Cache-Control： 向从服务器直到客户端在内的所有缓存机制告知，它们是否可以缓存这个对象。其单位为秒 Cache-Control: max-age=3600	常设
 
 #### Cookie
 指某些网站为了辨别用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）
